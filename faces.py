@@ -1,11 +1,10 @@
 import cv
 import time
 import Image
+import serial
 
-playFlag = True
-pauseFlag = False
-playCount=0
-pauseCount=0
+ser = serial.Serial('/dev/ttyUSB0', 9600, timeout=1)
+print ser.name
 
 cv.NamedWindow("Smart-Pause", 1)
 cameraSelect=input("""Enter Camera Number (Default Camera is 0):""")
@@ -74,10 +73,12 @@ def FaceDetect(image, faceCascade):
 				cv.PutText(image,Textdata,textPos,font,cv.RGB(255,25,5))
 			else:
 				cv.PutText(image,Textdata,textPos,font,cv.RGB(255,255,255))
-		print faceCount		
+		print "#"+str(faceCount)+";"
+		ser.write("#"+str(faceCount)+";")	
 
 	else:
-		print 0
+		print "#0;"
+		ser.write("#0;")
 	cv.PutText(image,"Dannylabs", (10,30),fontLogo,cv.RGB(0, 0, 0))
 	return image
 
@@ -90,4 +91,5 @@ while True:
 	cv.ShowImage("Smart-Pause", image)
 	k = cv.WaitKey(50);
 	if k in [27, ord('Q'), ord('q')]:
+		ser.close()
 		break
