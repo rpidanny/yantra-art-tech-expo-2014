@@ -6,7 +6,7 @@ import serial
 ser = serial.Serial('/dev/ttyUSB0', 9600, timeout=1)
 print ser.name
 
-cv.NamedWindow("Smart-Pause", 1)
+cv.NamedWindow("Faces", 1)
 cameraSelect=input("""Enter Camera Number (Default Camera is 0):""")
 capture = cv.CreateCameraCapture(cameraSelect)
 
@@ -88,7 +88,7 @@ while True:
 	img = cv.QueryFrame(capture)
 	cv.Flip(img,img,1)
 	image = FaceDetect(img, faceCascade)
-	cv.ShowImage("Smart-Pause", image)
+	cv.ShowImage("Faces", image)
 	k = cv.WaitKey(50);
 	if k in [27, ord('Q'), ord('q')]:
 		ser.close()
