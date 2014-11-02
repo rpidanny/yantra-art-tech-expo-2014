@@ -1,0 +1,12 @@
+@font-face {
+	font-family: 'ARIR';
+	src: url('./ARIR.eot');
+	src: local('ARIR'), url('./ARIR.woff') format('woff'), url('./ARIR.ttf') format('truetype');
+}
+/* use this class to attach this font to any element i.e. <p class="fontsforweb_fontid_15812">Text with this font applied</p> */
+.fontsforweb_fontid_15812 {
+	font-family: 'ARIR' !important;
+	font-size: 250%;
+}
+
+/* Font downloaded from FontsForWeb.com */

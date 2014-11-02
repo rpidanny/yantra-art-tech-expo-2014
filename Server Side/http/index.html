@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <!--<link rel="stylesheet" href="styles/align.css">-->
+    <link href="styles/style.css" type="text/css" rel="stylesheet"/>
+    <link href="fonts/spheroid/font.css" type="text/css" rel="stylesheet"/>
+    <link href="fonts/ARIR/font.css" type="text/css" rel="stylesheet"/>
+
+    <script src="scripts/bootstrap.min.js"></script>
+    <script src="scripts/jquery.min.js"></script>
+
+<script>
+$(document).ready(function(){
+  $("#button1").click(function(){
+    
+        $.post("/cgi-bin/yantra3/monitor.py",
+        {
+          message:"a"
+        },
+        function(data,status){
+         // alert("Data: " + data + "\nStatus: " + status);
+         //alert("Turned on");
+          $('#currentMood').text("Your Current Mood is Excited");
+        });
+  });
+
+  $("#button2").click(function(){
+    
+        $.post("/cgi-bin/yantra3/monitor.py",
+        {
+          message:"b"
+        },
+        function(data,status){
+         // alert("Data: " + data + "\nStatus: " + status);
+        // alert("Turned on");
+          $('#currentMood').text("Your Current Mood is Spongey");
+        });
+    
+  });
+
+    $("#button3").click(function(){
+    
+        $.post("/cgi-bin/yantra3/monitor.py",
+        {
+          message:"c"
+        },
+        function(data,status){
+         // alert("Data: " + data + "\nStatus: " + status);
+         //alert("Turned on");
+          $('#currentMood').text("Your Current Mood is Happy");
+        });
+    
+  });
+
+
+    $("#button4").click(function(){
+    
+            $.post("/cgi-bin/yantra3/monitor.py",
+            {
+              message:"d"
+            },
+            function(data,status){
+             // alert("Data: " + data + "\nStatus: " + status);
+            // alert("Turned on");
+            $('#currentMood').text("Your Current Mood is Worried");
+            });
+    
+  });
+
+});
+</script>
+
+<title>
+    Art-Tech Expo
+</title>
+  </head>
+
+  <body>
+ 
+
+
+    <div class="container" id="wrapper">
+
+
+ <!-- Modal Connection -->
+        <div class="modal hide fade" id="ModalConnection">
+
+            <div class="modal-header">
+              <h3>WebRTC Sample Connection</h3>
+            </div>
+
+            <div class="modal-body">
+              <div class="control-group">
+                <label>Nickname :</label>
+                <input id="nickname" type="text" class="span2">
+                <span class="help-inline hide">Not empty !</span>
+              </div>
+            </div>
+
+            <div class="modal-footer">
+            <button id="loginSub" class="btn btn-primary">Login</button>
+            </div>
+
+        </div>
+        <!-- End of the Modal Connection -->
+    
+      <h1 class="fontsforweb_fontid_15812">Welcome</h1>
+      <p>How are you feeling rght now?</p>
+                                                                                      
+      <div class="btnTable">          
+      <table>
+        <thead>
+          <tr>
+            <th ><div id="button1"><img src="images/emotions/excited.png" class="img-responsive" alt="Cinque Terre" width="204" > </div></th>
+            <th><div id="button2"><img src="images/emotions/smiley.png" class="img-responsive" alt="Cinque Terre" width="204"></div> </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><div id="button3"><img src="images/emotions/happy.png" class="img-responsive" alt="Cinque Terre" width="204"></div></td>
+            <td><div id="button4"><img src="images/emotions/worried.png" class="img-responsive" alt="Cinque Terre" width="204"></div></td>
+          </tr>
+         
+        </tbody>
+      </table>
+      </div>
+      <p id="currentMood">
+          
+      </p>
+      
+    </div>
+
+
+   
+  
+  </body>
+
+</html>

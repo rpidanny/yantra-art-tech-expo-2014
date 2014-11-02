@@ -1,0 +1,12 @@
+@font-face {
+	font-family: 'spheroid';
+	src: url('./spheroid.eot');
+	src: local('spheroid'), url('./spheroid.woff') format('woff'), url('./spheroid.ttf') format('truetype');
+}
+/* use this class to attach this font to any element i.e. <p class="fontsforweb_fontid_975">Text with this font applied</p> */
+.fontsforweb_fontid_975 {
+	font-family: 'spheroid';
+
+}
+
+/* Font downloaded from FontsForWeb.com */
