@@ -3,9 +3,9 @@ int redAvg=0;
 int greenAvg=0;
 int blueAvg=0;
 
-int redPin=13;
-int greenPin=12;
-int bluePin=11;
+int redPin=2;
+int greenPin=3;
+int bluePin=4;
 
 void setup(){
   
