@@ -1,7 +1,6 @@
+#!/Python27/python
+
 #!/usr/bin/env python
-
-
-import serial
 import cgi
 import cgitb; cgitb.enable()  # for troubleshooting
 
@@ -25,3 +24,5 @@ Working
 </html>
 """
 
+
+#!/Python27/python

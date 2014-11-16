@@ -1,0 +1,223 @@
+<!doctype html>
+<html>
+    <head>
+
+        <title>Mood Dress</title>
+
+        <!-- Stylesheet Ressources -->
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<!--<link rel="stylesheet" href="css/bootstrap.css">-->
+        
+		<!--<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">-->
+        <!-- JavaScript Ressources -->
+        <script src="js/jquery-1.7.1.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="js/global.js" type="text/javascript" charset="utf-8"></script>
+
+		<link href="styles/style.css" type="text/css" rel="stylesheet"/>
+		<link href="fonts/spheroid/font.css" type="text/css" rel="stylesheet"/>
+		<link href="fonts/ARIR/font.css" type="text/css" rel="stylesheet"/>
+
+
+
+<script>
+$(document).ready(function(){
+  $("#button1").click(function(){
+        
+		$('#moodTable').css('visibility','hidden');
+		$('#welcomePic').css('visibility','hidden');
+		$('#about-team').css('visibility','hidden');
+        $('#currentMood').text("Please Wait!!");
+
+        //alert($("#nickname").val());
+        var nameValue = $("#nickname").val();
+        $.post("/cgi-bin/yantra3/commands.py",
+        {
+          message:"a",
+          name:nameValue
+
+        },
+        function(data,status){
+         // alert("Data: " + data + "\nStatus: " + status);
+         //alert("Turned on");
+          $('#currentMood').text("Your Current Mood is Happy");
+		  
+		  window.open("/mood-dress/success.html","_self");
+        });
+
+
+  });
+
+  $("#button2").click(function(){
+
+  		$('#moodTable').css('visibility','hidden');
+		$('#welcomePic').css('visibility','hidden');
+		$('#about-team').css('visibility','hidden');
+        $('#currentMood').text("Please Wait!!");
+        var nameValue = $("#nickname").val();
+        $.post("/cgi-bin/yantra3/commands.py",
+        {
+          message:"b",
+          name:nameValue
+        },
+        function(data,status){
+         // alert("Data: " + data + "\nStatus: " + status);
+        // alert("Turned on");
+          $('#currentMood').text("Your Current Mood is Angry");
+		  window.open("/mood-dress/success.html","_self");
+        });
+    
+  });
+
+
+    $("#button3").click(function(){
+
+    	$('#moodTable').css('visibility','hidden');
+		$('#welcomePic').css('visibility','hidden');
+		$('#about-team').css('visibility','hidden');
+        $('#currentMood').text("Please Wait!!");
+        var nameValue = $("#nickname").val();
+        $.post("/cgi-bin/yantra3/commands.py",
+        {
+          message:"c",
+          name:nameValue
+        },
+        function(data,status){
+         // alert("Data: " + data + "\nStatus: " + status);
+         //alert("Turned on");
+          $('#currentMood').text("Your Current Mood is Relaxed");
+		  window.open("/mood-dress/success.html","_self");
+        });
+    
+  });
+
+
+    $("#button4").click(function(){
+
+    		$('#moodTable').css('visibility','hidden');
+			$('#welcomePic').css('visibility','hidden');
+			$('#about-team').css('visibility','hidden');
+            $('#currentMood').text("Please Wait!!");
+            var nameValue = $("#nickname").val();
+            $.post("/cgi-bin/yantra3/commands.py",
+            {
+              message:"d",
+              name:nameValue
+            },
+            function(data,status){
+             // alert("Data: " + data + "\nStatus: " + status);
+            // alert("Turned on");
+            $('#currentMood').text("You are in Love");
+			window.open("/mood-dress/success.html","_self");
+
+			});
+    
+  });
+
+  
+      $("#button5").click(function(){
+
+      		$('#moodTable').css('visibility','hidden');
+			$('#welcomePic').css('visibility','hidden');
+			$('#about-team').css('visibility','hidden');
+            $('#currentMood').text("Please Wait!!");
+            var nameValue = $("#nickname").val();
+            $.post("/cgi-bin/yantra3/commands.py",
+            {
+              message:"e",
+              name:nameValue
+            },
+            function(data,status){
+             // alert("Data: " + data + "\nStatus: " + status);
+            // alert("Turned on");
+            $('#currentMood').text("Your Current Mood is Envy");
+			window.open("/mood-dress/success.html","_self"); 
+
+			});
+    
+  });
+  
+      $("#button6").click(function(){
+
+      		$('#moodTable').css('visibility','hidden');
+			$('#welcomePic').css('visibility','hidden');
+			$('#about-team').css('visibility','hidden');
+            $('#currentMood').text("Please Wait!!");
+            var nameValue = $("#nickname").val();
+            $.post("/cgi-bin/yantra3/commands.py",
+            {
+              message:"f",
+              name:nameValue
+            },
+            function(data,status){
+             // alert("Data: " + data + "\nStatus: " + status);
+            // alert("Turned on");
+            $('#currentMood').text("Your Current Mood is Mysterious");
+			window.open("/mood-dress/success.html","_self");
+            });
+    
+  });
+});
+</script>
+
+
+
+    </head>
+
+    <body>
+
+
+        <!-- Content -->
+        <div class="container-fluid">
+
+            
+			
+			  <div class="container" id="wrapper">
+               
+						
+						<p id="currentMood" class="fontsforweb_fontid_15812">
+                        
+                    </p>
+					<!--<img src="images/loading.gif" width="300" style="visibility: hidden"><br>
+					-->
+					 <div id="welcomePic"><img src="images/MoodPage/question_txt.png"><br><br> </div>          
+
+                    <div class="btnTable" id="moodTable">          
+                    <table>
+                      
+						<tr>
+                          <td ><div id="button1"><img src="images/MoodPage/moods_rec/mood1_happy.gif" class="img-circle" alt="Cinque Terre" width="164" > </div></td>
+                          <td><div id="button2"><img src="images/MoodPage/moods_rec/mood4_angry.gif" class="img-circle" alt="Cinque Terre" width="164"></div> </td>
+                        </tr>
+                        <tr>
+                          <td><div id="button3"><img src="images/MoodPage/moods_rec/mood2_relaxed.gif" class="img-circle" alt="Cinque Terre" width="164"></div></td>
+                          <td><div id="button4"><img src="images/MoodPage/moods_rec/mood3_inlove.gif" class="img-circle" alt="Cinque Terre" width="164"></div></td>
+                        </tr>
+                       
+					    <tr>
+                          <td><div id="button5"><img src="images/MoodPage/mood6_envy.gif" class="img-circle" alt="Cinque Terre" width="164"></div></td>
+                          <td><div id="button6"><img src="images/MoodPage/mood5_mysterious.gif" class="img-circle" alt="Cinque Terre" width="164"></div></td>
+                        </tr>
+                       
+                     
+                    </table>
+                    </div>
+                    <p id="currentMood">
+                        
+                    </p>
+
+           
+          <div id="footer"></div>
+
+            <hr>
+
+            <!-- Footer -->
+           <!-- <footer><p>&copy; DannyLabs 2014</p></footer>
+-->
+
+<div  id="about-team"><footer><a href="about/"><p class="fontsforweb_fontid_15812">About Project</p></a></footer></div>
+            </div>
+        </div>
+        
+    </body>
+</html>
